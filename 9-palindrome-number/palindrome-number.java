@@ -3,12 +3,12 @@ class Solution {
         if(x<0) {
             return false;
         }
-        int num = x;
+        int n = x;
         int revNum = 0;
-        while(num>0) {
-            int last_d = num%10;
+        while(n>0) {
+            int last_d = n%10;
             revNum = revNum*10 + last_d;
-            num = num/10;
+            n = n/10;
         }
         if(revNum == x) {
             return true;
