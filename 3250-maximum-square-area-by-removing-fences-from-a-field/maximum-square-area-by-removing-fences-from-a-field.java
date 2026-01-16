@@ -2,7 +2,6 @@ class Solution {
     public int maximizeSquareArea(int m, int n, int[] hFences, int[] vFences) {
         final long MOD = 1_000_000_007L;
 
-        // Add boundaries
         int[] h = new int[hFences.length + 2];
         int[] v = new int[vFences.length + 2];
 
@@ -21,7 +20,6 @@ class Solution {
         Arrays.sort(h);
         Arrays.sort(v);
 
-        // Store all horizontal distances
         Set<Integer> horizontalDistances = new HashSet<>();
         for (int i = 0; i < h.length; i++) {
             for (int j = i + 1; j < h.length; j++) {
@@ -31,7 +29,6 @@ class Solution {
 
         long maxSide = 0;
 
-        // Check vertical distances
         for (int i = 0; i < v.length; i++) {
             for (int j = i + 1; j < v.length; j++) {
                 int dist = v[j] - v[i];
