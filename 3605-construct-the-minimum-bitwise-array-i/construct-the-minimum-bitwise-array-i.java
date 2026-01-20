@@ -3,7 +3,7 @@ class Solution {
         int n = nums.size();
         int[] ans = new int[n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i <= n-1; i++) {
             int x = nums.get(i);
 
             if (x == 0) {
@@ -12,11 +12,12 @@ class Solution {
             }
 
             int lowestBit = (x + 1) & -(x + 1);
-            int candidate = x - (lowestBit >> 1);
+            int can = x - (lowestBit >> 1);
 
-            if ((candidate | (candidate + 1)) == x) {
-                ans[i] = candidate;
-            } else {
+            if ((can | (can + 1)) == x) {
+                ans[i] = can;
+            }
+            else {
                 ans[i] = -1;
             }
         }
