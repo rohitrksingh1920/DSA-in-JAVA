@@ -9,7 +9,6 @@ class Solution {
             int minSum = Integer.MAX_VALUE;
             int idx = 0;
 
-            // Find leftmost adjacent pair with minimum sum
             for (int i = 0; i < arr.size() - 1; i++) {
                 int sum = arr.get(i) + arr.get(i + 1);
                 if (sum < minSum) {
@@ -18,7 +17,6 @@ class Solution {
                 }
             }
 
-            // Replace the pair with their sum
             arr.set(idx, arr.get(idx) + arr.get(idx + 1));
             arr.remove(idx + 1);
 
