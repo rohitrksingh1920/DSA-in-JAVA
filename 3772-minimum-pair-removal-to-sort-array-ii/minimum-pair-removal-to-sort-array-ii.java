@@ -8,7 +8,6 @@ class Solution {
             this.index = index;
         }
 
-        // @Override
         public int compareTo(Pair other) {
             if (this.sum != other.sum) {
                 return Long.compare(this.sum, other.sum);
