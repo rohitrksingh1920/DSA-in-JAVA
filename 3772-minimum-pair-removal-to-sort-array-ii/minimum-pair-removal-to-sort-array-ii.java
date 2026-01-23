@@ -8,7 +8,7 @@ class Solution {
             this.index = index;
         }
 
-        @Override
+        // @Override
         public int compareTo(Pair other) {
             if (this.sum != other.sum) {
                 return Long.compare(this.sum, other.sum);
@@ -46,10 +46,6 @@ class Solution {
             Pair top = pq.poll();
             int i = top.index;
 
-            // Lazy deletion check:
-            // 1. Is 'i' already removed?
-            // 2. Is its right neighbor 'j' removed?
-            // 3. Is the sum still current?
             if (removed[i] || next[i] == -1 || val[i] + val[next[i]] != top.sum) {
                 continue;
             }
@@ -58,22 +54,18 @@ class Solution {
             int p = prev[i];
             int nn = next[j];
 
-            // 1. Decrease inversions for affected pairs before the merge
             if (p != -1 && val[p] > val[i]) inversions--;
             if (val[i] > val[j]) inversions--;
             if (nn != -1 && val[j] > val[nn]) inversions--;
 
-            // 2. Perform the merge
             val[i] = top.sum;
             removed[j] = true;
             next[i] = nn;
             if (nn != -1) prev[nn] = i;
 
-            // 3. Increase inversions for new neighbor relationships
             if (p != -1 && val[p] > val[i]) inversions++;
             if (nn != -1 && val[i] > val[nn]) inversions++;
 
-            // 4. Add new potential pairs to the priority queue
             if (p != -1) pq.add(new Pair(val[p] + val[i], p));
             if (nn != -1) pq.add(new Pair(val[i] + val[nn], i));
 
