@@ -1,13 +1,25 @@
 class Solution:
+
     def rotate(self, nums: List[int], k: int) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
+        def reverseArray(nums, s, e):
+            while s < e:
+                nums[s], nums[e] = nums[e] , nums[s]
+                s += 1
+                e -= 1
 
-        arr = [0] * len(nums)
+        # 1. revers
 
-        for i in range(0, len(nums)):
-            arr[(i+k) % len(nums)] = nums[i]
+        k = k % len(nums)
+        reverseArray(nums, 0, len(nums)-1)
+        print(nums)
 
-        for i in range(0, len(nums)):
-            nums[i] = arr[i]
+        reverseArray(nums, 0, k-1)
+        print(nums)
+
+        reverseArray(nums, k, len(nums)-1)
+        print(nums)
+
+        
