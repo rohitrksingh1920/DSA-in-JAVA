@@ -3,10 +3,6 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        from typing import List
-
-class Solution:
-    def sortColors(self, nums: List[int]) -> None:
         zero = 0
         curr = 0
         two = len(nums) - 1
