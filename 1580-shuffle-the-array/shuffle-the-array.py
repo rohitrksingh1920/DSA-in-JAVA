@@ -12,5 +12,8 @@ class Solution:
             else:
                 arr[i] = nums[mid]
                 mid += 1
+        
+        for i in range(0, len(nums)):
+            nums[i] = arr[i]
 
-        return arr
+        return nums
