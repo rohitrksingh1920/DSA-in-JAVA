@@ -10,9 +10,7 @@ class Solution {
             for(int j=i; j<nums.length; j++) {
                 if(nums[j]%2==0)
                     even.add(nums[j]);
-                else {
-                    odd.add(nums[j]);
-                }
+                else odd.add(nums[j]);
                 if(even.size()==odd.size()) {
                     maxlen = Math.max(maxlen, j-i+1);
                 }
