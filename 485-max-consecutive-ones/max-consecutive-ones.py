@@ -12,14 +12,13 @@ class Solution:
 
         # return maxLen
 
-        right = 0
+        left = 0
         maxLen = 0
 
-        for val in nums:
-            if val == 1:
-                right += 1
-                maxLen = max(maxLen, right)
-            else:
-                right = 0
+        for right in range(len(nums)):
+            if nums[right] == 0:
+                left = right + 1
+            
+            maxLen = max(maxLen, right - left + 1)
 
         return maxLen
