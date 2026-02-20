@@ -6,14 +6,19 @@ class Solution:
         rows = len(matrix)
         cols = len(matrix[0])
 
-        temp = [row[:] for row in matrix]
+        temp = []
+
+        for i in range(rows):
+            rowArr = []
+            for j in range(cols):
+                rowArr.append(matrix[i][j])
+            temp.append(rowArr)
 
         for i in range(rows):
             for j in range(cols):
                 if matrix[i][j] == 0:
                     for k in range(cols):
                         temp[i][k] = 0
-                    
                     for k in range(rows):
                         temp[k][j] = 0
 
