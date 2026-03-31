@@ -26,7 +26,7 @@ class Solution {
             }
         }
 
-        // Step 2: Fill remaining with 'a'
+        // Step 2: Fill remaining with 'a' as lexicographically smallest
         for (int i = 0; i < N; i++) {
             if (word[i] == '$') {
                 word[i] = 'a';
@@ -50,7 +50,9 @@ class Solution {
                         }
                     }
 
-                    if (!changed) return "";
+                    if (!changed) {
+                        return "";
+                    }
                 }
             }
         }
@@ -60,7 +62,9 @@ class Solution {
 
     private boolean isSame(char[] word, String str2, int i, int m) {
         for (int j = 0; j < m; j++) {
-            if (word[i] != str2.charAt(j)) return false;
+            if (word[i] != str2.charAt(j)) {
+                return false;
+            }
             i++;
         }
         return true;
