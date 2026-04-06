@@ -4,9 +4,9 @@ class Solution:
         d = 0
         
         x, y = 0, 0
-        obstacle_set = set(map(tuple, obstacles))
+        obstacleSet = set(map(tuple, obstacles))
         
-        max_distance = 0
+        maxDistance = 0
         
         for cmd in commands:
             if cmd == -1:  
@@ -16,10 +16,10 @@ class Solution:
             else:
                 dx, dy = directions[d]
                 for _ in range(cmd):
-                    if (x + dx, y + dy) in obstacle_set:
+                    if (x + dx, y + dy) in obstacleSet:
                         break
                     x += dx
                     y += dy
-                    max_distance = max(max_distance, x*x + y*y)
+                    maxDistance = max(maxDistance, x*x + y*y)
         
-        return max_distance
+        return maxDistance
