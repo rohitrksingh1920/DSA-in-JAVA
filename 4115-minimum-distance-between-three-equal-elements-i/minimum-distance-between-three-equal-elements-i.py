@@ -5,7 +5,7 @@ class Solution:
         minDis = float('inf')
 
         for i in range(n):
-            count = 1   # nums[i] itself
+            count = 1
             prev = i
 
             for j in range(i + 1, n):
@@ -18,6 +18,6 @@ class Solution:
                         k = j
                         dis = (mid - i) + (k - mid) + (k - i)
                         minDis = min(minDis, dis)
-                        break   # no need to check further for this i
+                        break
 
         return minDis if minDis != float('inf') else -1
