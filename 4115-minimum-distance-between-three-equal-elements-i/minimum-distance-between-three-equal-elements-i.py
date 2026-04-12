@@ -5,12 +5,19 @@ class Solution:
         minDis = float('inf')
 
         for i in range(n):
+            count = 1   # nums[i] itself
+            prev = i
+
             for j in range(i + 1, n):
-                if nums[i] != nums[j]:
-                    continue
-                for k in range(j + 1, n):
-                    if nums[j] == nums[k]:
-                        dis = (j - i) + (k - j) + (k - i)
+                if nums[j] == nums[i]:
+                    count += 1
+
+                    if count == 2:
+                        mid = j
+                    elif count == 3:
+                        k = j
+                        dis = (mid - i) + (k - mid) + (k - i)
                         minDis = min(minDis, dis)
+                        break   # no need to check further for this i
 
         return minDis if minDis != float('inf') else -1
