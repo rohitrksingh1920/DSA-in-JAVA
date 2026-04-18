@@ -14,13 +14,13 @@ class Solution:
 
 
 
-        # original = n
-        # rev = 0
-        # while n:
-        #     rev = rev * 10 + (n % 10)
-        #     n //= 10
-        # return abs(original - rev)
+        original = n
+        rev = 0
+        while n:
+            rev = rev * 10 + (n % 10)
+            n //= 10
+        return abs(original - rev)
 
 
 
-        return abs(n - int(str(n)[::-1]))
+        # return abs(n - int(str(n)[::-1]))
