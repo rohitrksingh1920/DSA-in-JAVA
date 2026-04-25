@@ -1,8 +1,6 @@
 class Solution:
     def maxDistance(self, side: int, points: List[List[int]], k: int) -> int:
-
         n = len(points)
-
         points2 = []
 
         for x, y in points:
@@ -21,6 +19,7 @@ class Solution:
             for i in range(n):
                 count = 1
                 curr = i
+
                 while count < k:
                     jump = bisect.bisect_left(points2, points2[curr] + mn)
 
@@ -35,13 +34,15 @@ class Solution:
 
                 if count == k:
                     return True
+
             return False
-        
+
         l = 1
         h = side * 2
+
         while l < h:
             mid = l + (h - l + 1) // 2
-
+            
             if check(mid):
                 l = mid
             else:
