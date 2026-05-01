@@ -2,13 +2,13 @@ class Solution:
     def maxRotateFunction(self, nums: List[int]) -> int:
         n = len(nums)
         
-        total_sum = sum(nums)
+        totalSum = sum(nums)
         F = sum(i * num for i, num in enumerate(nums))
         
-        max_val = F
+        maxVal = F
         
         for k in range(1, n):
-            F = F + total_sum - n * nums[n - k]
-            max_val = max(max_val, F)
+            F = F + totalSum - n * nums[n - k]
+            maxVal = max(maxVal, F)
         
-        return max_val
+        return maxVal
