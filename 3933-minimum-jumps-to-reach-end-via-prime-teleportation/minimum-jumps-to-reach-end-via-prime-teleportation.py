@@ -57,23 +57,19 @@ class Solution:
                 if i == n - 1:
                     return steps
 
-                # i - 1
                 if i - 1 >= 0 and not visited[i - 1]:
 
                     queue.append(i - 1)
                     visited[i - 1] = True
 
-                # i + 1
                 if i + 1 < n and not visited[i + 1]:
 
                     queue.append(i + 1)
                     visited[i + 1] = True
 
-                # skip if not prime or already processed
                 if (not self.isPrime[nums[i]]) or (nums[i] in seen):
                     continue
 
-                # visit all multiples
                 multiple = nums[i]
 
                 while multiple <= maxEl:
