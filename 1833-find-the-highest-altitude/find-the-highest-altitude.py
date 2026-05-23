@@ -5,6 +5,6 @@ class Solution:
         ps = [0] * (n + 1)
 
         for i in range(n):
-            ps[i + 1] = ps[i] + gain[i]
+            ps[i] = ps[i-1] + gain[i]
 
         return max(ps)
