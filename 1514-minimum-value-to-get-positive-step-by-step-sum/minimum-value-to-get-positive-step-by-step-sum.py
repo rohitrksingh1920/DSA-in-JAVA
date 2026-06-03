@@ -1,18 +1,10 @@
 class Solution:
     def minStartValue(self, nums: List[int]) -> int:
-        startVal = 1
-        while True:
-            stepSum = startVal
-            valid = True
+        curSum = 0
+        minSum = float('inf')
 
-            for num in nums:
-                stepSum += num
+        for num in nums:
+            curSum += num
+            minSum = min(minSum, curSum)
 
-                if stepSum < 1:
-                    valid = False
-                    break
-
-            if valid == True:
-                return startVal
-
-            startVal += 1
+        return max(1, 1 - minSum)
