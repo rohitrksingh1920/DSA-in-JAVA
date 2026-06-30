@@ -10,7 +10,7 @@ class Solution:
             count[ch] += 1
 
             while count['a'] > 0 and count['b'] > 0 and count['c'] > 0:
-                ans += len(s) - right
+                ans += n - right
                 ch = s[left]
                 count[ch] -= 1
                 left += 1
