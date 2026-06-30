@@ -1,6 +1,10 @@
 class Solution:
     def numberOfSubstrings(self, s: str) -> int:
-        count = {'a': 0, 'b': 0, 'c': 0}
+        count = {
+            'a': 0,
+            'b': 0,
+            'c': 0
+            }
         left = 0
         ans = 0
         n = len(s)
