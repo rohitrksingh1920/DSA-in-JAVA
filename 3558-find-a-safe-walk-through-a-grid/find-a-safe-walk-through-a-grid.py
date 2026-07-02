@@ -1,12 +1,12 @@
 class Solution:
     def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
-        m, n = len(grid), len(grid[0])
+        m = len(grid)
+        n = len(grid[0])
 
         start = health - grid[0][0]
         if start <= 0:
             return False
 
-        # best[i][j] = maximum health left when reaching (i, j)
         best = [[-1] * n for _ in range(m)]
         best[0][0] = start
 
