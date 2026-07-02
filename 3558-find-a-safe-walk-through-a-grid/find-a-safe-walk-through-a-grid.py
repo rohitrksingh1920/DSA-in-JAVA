@@ -6,22 +6,19 @@ class Solution:
         if start <= 0:
             return False
 
+        # best[i][j] = maximum health left when reaching (i, j)
         best = [[-1] * n for _ in range(m)]
         best[0][0] = start
 
-        pq = [(-start, 0, 0)]
+        q = deque([(0, 0, start)])
 
         directions = [(1,0), (-1,0), (0,1), (0,-1)]
 
-        while pq:
-            h, x, y = heappop(pq)
-            h = -h
+        while q:
+            x, y, h = q.popleft()
 
             if x == m - 1 and y == n - 1:
                 return True
-
-            if h < best[x][y]:
-                continue
 
             for dx, dy in directions:
                 nx, ny = x + dx, y + dy
@@ -31,6 +28,6 @@ class Solution:
 
                     if nh > 0 and nh > best[nx][ny]:
                         best[nx][ny] = nh
-                        heappush(pq, (-nh, nx, ny))
+                        q.append((nx, ny, nh))
 
         return False
