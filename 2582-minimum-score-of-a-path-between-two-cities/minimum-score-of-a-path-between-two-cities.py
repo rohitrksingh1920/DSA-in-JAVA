@@ -7,16 +7,17 @@ class Solution:
             graph[v].append((u, w))
 
         visited = [False] * (n + 1)
+        q = deque([1])
+        visited[1] = True
         ans = float("inf")
 
-        def dfs(node):
-            nonlocal ans
-            visited[node] = True
+        while q:
+            node = q.popleft()
 
             for nei, w in graph[node]:
                 ans = min(ans, w)
                 if not visited[nei]:
-                    dfs(nei)
+                    visited[nei] = True
+                    q.append(nei)
 
-        dfs(1)
         return ans
