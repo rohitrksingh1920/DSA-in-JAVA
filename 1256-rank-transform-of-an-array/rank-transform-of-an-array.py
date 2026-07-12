@@ -1,10 +1,10 @@
 class Solution:
     def arrayRankTransform(self, arr: List[int]) -> List[int]:
-        sortedArr = sorted(set(arr))
+        sortedUniArr = sorted(set(arr))
 
         rank = {}
-        for i in range(len(sortedArr)):
-            rank[sortedArr[i]] = i + 1
+        for i in range(len(sortedUniArr)):
+            rank[sortedUniArr[i]] = i + 1
 
         ans = []
         for val in arr:
