@@ -1,13 +1,13 @@
 class Solution:
     def arrayRankTransform(self, arr: List[int]) -> List[int]:
-        sorted_arr = sorted(set(arr))
+        sortedArr = sorted(set(arr))
 
         rank = {}
-        for i in range(len(sorted_arr)):
-            rank[sorted_arr[i]] = i + 1
+        for i in range(len(sortedArr)):
+            rank[sortedArr[i]] = i + 1
 
         ans = []
-        for x in arr:
-            ans.append(rank[x])
+        for val in arr:
+            ans.append(rank[val])
 
         return ans
