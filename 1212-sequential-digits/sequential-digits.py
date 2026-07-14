@@ -1,16 +1,19 @@
 class Solution:
     def sequentialDigits(self, low: int, high: int) -> List[int]:
-        nums = "123456789"
+        q = deque(range(1, 10))
         ans = []
 
-        lowLen = len(str(low))
-        highLen = len(str(high))
+        while q:
+            num = q.popleft()
 
-        for length in range(lowLen, highLen + 1):
-            for i in range(10 - length):
-                num = int(nums[i:i + length])
+            if low <= num <= high:
+                ans.append(num)
 
-                if low <= num <= high:
-                    ans.append(num)
+            last = num % 10
+
+            if last < 9:
+                nxt = num * 10 + last + 1
+                if nxt <= high:
+                    q.append(nxt)
 
         return ans
