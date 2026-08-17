@@ -36,13 +36,13 @@ class Solution:
 
 
         count = 0
-        candidate = 0
+        res = 0
         for curr in nums:
             if count == 0:
-                candidate = curr
-            if curr == candidate:
+                res = curr
+            if curr == res:
                 count += 1
             else:
                 count -= 1
 
-        return candidate
+        return res
