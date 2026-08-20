@@ -8,3 +8,16 @@ class Solution:
             maxSum = max(maxSum, curSum)
 
         return maxSum
+
+
+
+        # maxSum = nums[0]
+        # n = len(nums)
+
+        # for i in range(n):
+        #     curSum = 0
+        #     for j in range(i, n):
+        #         curSum += nums[j]
+        #         maxSum = max(maxSum, curSum)
+
+        # return maxSum
