@@ -10,4 +10,7 @@ class Solution:
             digitProduct *= digit
             temp //= 10
 
-        return n % (digitSum + digitProduct) == 0
+        if n % (digitSum + digitProduct) == 0:
+            return True
+        return False
+        # return n % (digitSum + digitProduct) == 0
