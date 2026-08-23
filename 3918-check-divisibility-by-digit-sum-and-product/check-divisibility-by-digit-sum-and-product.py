@@ -13,4 +13,3 @@ class Solution:
         if n % (digitSum + digitProduct) == 0:
             return True
         return False
-        # return n % (digitSum + digitProduct) == 0
