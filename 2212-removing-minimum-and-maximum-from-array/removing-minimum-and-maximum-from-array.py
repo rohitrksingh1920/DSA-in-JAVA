@@ -19,9 +19,9 @@ class Solution:
         if idxMin > idxMax:
             idxMin, idxMax = idxMax, idxMin
 
-        front = idxMax + 1
-        back = n - idxMin
+        start = idxMax + 1
+        end = n - idxMin
         both = (idxMin + 1) + (n - idxMax)
 
-        return min(front, back, both)
+        return min(start, end, both)
             
