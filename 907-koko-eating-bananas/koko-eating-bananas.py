@@ -17,3 +17,19 @@ class Solution:
                 left = mid + 1
 
         return left
+
+
+
+
+        # maxSpeed = max(piles)
+
+        # for k in range(1, maxSpeed + 1):
+        #     hours = 0
+
+        #     for pile in piles:
+        #         hours += (pile + k - 1) // k
+
+        #     if hours <= h:
+        #         return k
+
+        # return maxSpeed
