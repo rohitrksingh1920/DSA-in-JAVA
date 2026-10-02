@@ -1,14 +1,16 @@
 class Solution:
     def isValid(self, s: str) -> bool:
+        if len(s) % 2 != 0:
+            return False
+
         stack = []
-        pairs = {')': '(', '}': '{', ']': '['}
+        pairs = {')': '(', ']': '[', '}': '{'}
 
         for ch in s:
-            if ch in '({[':
-                stack.append(ch)
-            else:
-                if not stack or stack[-1] != pairs[ch]:
+            if ch in pairs:
+                if not stack or stack.pop() != pairs[ch]:
                     return False
-                stack.pop()
+            else:
+                stack.append(ch)
 
-        return len(stack) == 0
+        return not stack
