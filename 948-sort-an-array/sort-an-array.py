@@ -32,3 +32,29 @@ class Solution:
             j += 1
 
         return result
+
+
+    #     n = len(nums)
+
+    #     if n <= 1:
+    #         return nums
+
+    #     mid = n // 2
+
+    #     left = self.sortArray(nums[:mid])
+    #     right = self.sortArray(nums[mid:])
+
+    #     return self.merge(left, right)
+
+    # def merge(self, left, right):
+    #     if not left:
+    #         return right
+
+    #     if not right:
+    #         return left
+
+    #     if left[0] <= right[0]:
+    #         return [left[0]] + self.merge(left[1:], right)
+
+    #     else:
+    #         return [right[0]] + self.merge(left, right[1:])
