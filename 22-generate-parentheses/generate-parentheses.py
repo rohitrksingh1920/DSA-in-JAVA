@@ -1,10 +1,10 @@
 class Solution:
     def generateParenthesis(self, n: int) -> list[str]:
-        ans = []
+        stack = []
 
         def backTrack(curr, openCount, closeCount):
             if len(curr) == 2 * n:
-                ans.append(curr)
+                stack.append(curr)
                 return
 
             if openCount < n:
@@ -14,4 +14,4 @@ class Solution:
                 backTrack(curr + ')', openCount, closeCount + 1)
 
         backTrack("", 0, 0)
-        return ans
+        return stack
