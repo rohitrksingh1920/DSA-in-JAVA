@@ -10,8 +10,8 @@ class Solution:
         maxFreq = max(freq.values())
         ans = 0
 
-        for value in freq.values():
-            if value == maxFreq:
-                ans += value
+        for val in freq.values():
+            if val == maxFreq:
+                ans += val
 
         return ans
