@@ -22,19 +22,19 @@ class Solution:
         #     nums[i] = 2
 
 
-        lo = 0
+        low = 0
         mid = 0
-        hi = len(nums) - 1
+        high = len(nums) - 1
 
-        while mid <= hi:
+        while mid <= high:
             if nums[mid] == 0:
-                nums[lo], nums[mid] = nums[mid], nums[lo]
-                lo += 1
+                nums[low], nums[mid] = nums[mid], nums[low]
+                low += 1
                 mid += 1
 
-            elif nums[mid] == 2:
-                nums[mid], nums[hi] = nums[hi], nums[mid]
-                hi -= 1
+            elif nums[mid] == 1:
+                mid += 1
 
             else:
-                mid += 1
+                nums[mid], nums[high] = nums[high], nums[mid]
+                high -= 1
