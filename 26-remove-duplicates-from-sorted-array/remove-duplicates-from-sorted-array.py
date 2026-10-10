@@ -1,17 +1,23 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
+        n = len(nums)
 
-        # i = 0
+        if not nums:
+            return 0
+        
+        k = 1
+        for i in range(1, n):
+            if nums[i] != nums[k-1]:
+                nums[k] = nums[i]
+                k += 1
+        return k
+        
 
-        # for j in range(1, len(nums)):
-        #     lastUnique = nums[i]
-        #     curr = nums[j]
 
-        #     if nums[i] != nums[j]:
-        #         nums[i+1] = nums[j]
-        #         i += 1
 
-        # return i + 1
+
+
+
 
 
 
