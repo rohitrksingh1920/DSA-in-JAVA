@@ -1,6 +1,5 @@
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-
         left = 1
         right = max(piles)
 
@@ -19,3 +18,5 @@ class Solution:
                 left = mid + 1
 
         return left
+
+
