@@ -7,7 +7,6 @@ class Solution:
             mid = (left + right) // 2
 
             hours = 0
-
             for pile in piles:
                 hours += (pile + mid - 1) // mid
 
@@ -18,5 +17,4 @@ class Solution:
                 left = mid + 1
 
         return left
-
 
