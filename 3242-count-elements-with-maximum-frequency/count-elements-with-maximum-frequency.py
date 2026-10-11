@@ -1,6 +1,5 @@
 class Solution:
     def maxFrequencyElements(self, nums: List[int]) -> int:
-        
         freq = {}
 
         for val in nums:
@@ -17,4 +16,5 @@ class Solution:
             if val == maxFreq:
                 ans += val
 
-        return  ans
+        return ans
+
