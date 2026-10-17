@@ -19,14 +19,14 @@ class Solution:
             if visited[i] or arr[i][2] == i:
                 continue
 
-            cycle_size = 0
+            cycleSize = 0
             j = i
 
             while not visited[j]:
                 visited[j] = True
                 j = arr[j][2]
-                cycle_size += 1
+                cycleSize += 1
 
-            swaps += cycle_size - 1
+            swaps += cycleSize - 1
 
         return swaps
