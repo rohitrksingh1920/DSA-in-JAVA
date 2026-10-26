@@ -8,10 +8,9 @@ class Solution:
             else:
                 freq[ch] = 1
 
-        # arr = list(freq.keys())
-        # arr.sort(key=freq.get, reverse=True)
+        arr = list(freq.keys())
+        arr.sort(key=freq.get, reverse=True)
 
-        arr = sorted(freq, key=lambda ch: freq[ch], reverse=True)
         
         result = ""
 
