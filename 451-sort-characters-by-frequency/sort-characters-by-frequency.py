@@ -9,6 +9,7 @@ class Solution:
                 freq[ch] = 1
 
         arr = list(freq.keys())
+        key=freq.get
         arr.sort(key=freq.get, reverse=True)
 
         
