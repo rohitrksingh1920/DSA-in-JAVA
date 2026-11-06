@@ -16,10 +16,8 @@ class Solution:
         for query, idx in sorted_queries:
             start = query - x
 
-            # Add logs up to the query time
             while right < len(logs) and logs[right][1] <= query:
                 server = logs[right][0]
-
                 count[server] += 1
 
                 if count[server] == 1:
@@ -27,10 +25,8 @@ class Solution:
 
                 right += 1
 
-            # Remove logs before the window start
             while left < len(logs) and logs[left][1] < start:
                 server = logs[left][0]
-
                 count[server] -= 1
 
                 if count[server] == 0:
@@ -41,3 +37,5 @@ class Solution:
             ans[idx] = n - active
 
         return ans
+
+        
