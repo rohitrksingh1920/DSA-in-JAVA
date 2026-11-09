@@ -5,12 +5,11 @@
 #         self.next = next
 class Solution:
     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        
         if not head or not head.next or k == 0:
             return head
 
-        end = head
         length = 1
+        end = head
 
         while end.next:
             end = end.next
@@ -23,6 +22,7 @@ class Solution:
         stepToNewEnd = length - k - 1
 
         newEnd = head
+
         for i in range(stepToNewEnd):
             newEnd = newEnd.next
 
@@ -30,12 +30,3 @@ class Solution:
         newEnd.next = None
 
         return newHead
-
-
-
-
-
-
-
-
-
