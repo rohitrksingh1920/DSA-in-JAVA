@@ -29,4 +29,4 @@ class Solution:
         newHead = newEnd.next
         newEnd.next = None
 
-        return newHead
+        return newHead 
