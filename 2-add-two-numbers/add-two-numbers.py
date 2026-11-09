@@ -5,8 +5,10 @@
 #         self.next = next
 class Solution:
     def addTwoNumbers(self, l1: ListNode | None, l2: ListNode | None) -> ListNode | None:
-        newNode = ListNode(0)
-        curr = newNode
+        
+        newList = ListNode(0)
+        curr = newList
+
         carry = 0
 
         while l1 or l2 or carry:
@@ -26,4 +28,4 @@ class Solution:
             curr.next = ListNode(digit)
             curr = curr.next
 
-        return newNode.next
+        return newList.next
