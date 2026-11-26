@@ -1,21 +1,21 @@
 class Solution:
     def nextGreaterElement(self, nums1: list[int], nums2: list[int]) -> list[int]:
         stack = []
-        next_greater = {}
+        nextGr8 = {}
 
         for num in nums2:
 
             while stack and stack[-1] < num:
                 smaller = stack.pop()
-                next_greater[smaller] = num
+                nextGr8[smaller] = num
 
             stack.append(num)
 
         result = []
 
         for num in nums1:
-            if num in next_greater:
-                result.append(next_greater[num])
+            if num in nextGr8:
+                result.append(nextGr8[num])
             else:
                 result.append(-1)
 
